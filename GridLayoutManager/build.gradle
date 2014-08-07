@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.jakewharton.hugo:hugo-plugin:1.1.0'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'hugo'
+
+android {
+    compileSdkVersion 'android-L'
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.epam.itweek.layoutmanager"
+        minSdkVersion 'L'
+        targetSdkVersion 'L'
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:recyclerview-v7:21.+'
+    compile 'com.squareup.picasso:picasso:2.3.2'
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.squareup.retrofit:retrofit:1.6.1'
+}
